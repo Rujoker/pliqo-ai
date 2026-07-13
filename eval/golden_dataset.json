@@ -1,0 +1,52 @@
+[
+  {
+    "id": "gdpr_001",
+    "question": "Do I need to mention the right to erasure in my privacy policy?",
+    "document": "",
+    "jurisdictions": ["gdpr"],
+    "services": [],
+    "expected_topics": ["right to erasure", "Article 17", "GDPR"],
+    "expected_severity": "critical",
+    "tags": ["gdpr", "data_rights"]
+  },
+  {
+    "id": "gdpr_002",
+    "question": "Is it enough to just say we collect email addresses?",
+    "document": "We collect your email address.",
+    "jurisdictions": ["gdpr"],
+    "services": [],
+    "expected_topics": ["legal basis", "Article 6", "purpose", "Article 13"],
+    "expected_severity": "critical",
+    "tags": ["gdpr", "transparency"]
+  },
+  {
+    "id": "gdpr_003",
+    "question": "We use Stripe for payments. Do we need to mention this?",
+    "document": "We collect payments from users.",
+    "jurisdictions": ["gdpr"],
+    "services": ["stripe"],
+    "expected_topics": ["third party", "Stripe", "Article 13", "data processor"],
+    "expected_severity": "critical",
+    "tags": ["gdpr", "third_party"]
+  },
+  {
+    "id": "gdpr_004",
+    "question": "What is the right to data portability?",
+    "document": "",
+    "jurisdictions": ["gdpr"],
+    "services": [],
+    "expected_topics": ["data portability", "Article 20", "machine-readable"],
+    "expected_severity": "info",
+    "tags": ["gdpr", "data_rights"]
+  },
+  {
+    "id": "gdpr_005",
+    "question": "Do I need to specify how long I store user data?",
+    "document": "We store your data as long as needed.",
+    "jurisdictions": ["gdpr"],
+    "services": [],
+    "expected_topics": ["retention period", "Article 5", "storage limitation"],
+    "expected_severity": "warning",
+    "tags": ["gdpr", "retention"]
+  }
+]
