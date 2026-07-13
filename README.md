@@ -85,3 +85,12 @@ Runs 5 golden dataset cases through the RAG pipeline, scores each with an LLM-as
 Latest run: 5/5 passed, average score 8.0/10.
 
 Key finding: faithfulness scores (5-6/10) reveal the model draws on parametric knowledge beyond the retrieved corpus - a signal to expand the corpus rather than a prompt issue.
+
+## Live API
+
+Base URL: `https://web-production-7869b.up.railway.app`
+
+- `GET /health`
+- `POST /api/chat`
+- `POST /api/analyze`
+- `POST /api/upload`
