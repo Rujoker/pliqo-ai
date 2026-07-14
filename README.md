@@ -1,8 +1,10 @@
 # Pliqo AI
 
+![CI](https://github.com/Rujoker/pliqo-ai/actions/workflows/ci.yml/badge.svg)
+
 AI-powered legal document analysis backend for [Pliqo](https://pliqo.vercel.app) - a privacy policy generator for developers.
 
-Built to demonstrate production-ready AI engineering practices: RAG pipeline, agentic document analysis, and LLM evaluation harness.
+Built to the engineering standard that separates production AI systems from demos: a RAG pipeline, an agentic document analyzer, and an LLM evaluation harness.
 
 ## What it does
 
@@ -19,9 +21,20 @@ Built to demonstrate production-ready AI engineering practices: RAG pipeline, ag
 - pytest-compatible eval runner
 
 ## Architecture
-Request → FastAPI Router → Service Layer → ChromaDB (retrieval) + Claude (generation) → Response
-↓
-Eval Harness (offline, LLM-as-judge)
+```
+Client
+  │  POST /api/chat  { question }
+  ▼
+FastAPI router  (routers/chat.py)
+  │
+  ▼
+RAG service  (services/rag.py)
+  ├─► ChromaDB (persistent)  ──  top-k retrieval over the GDPR corpus
+  └─► Anthropic SDK          ──  generation grounded in retrieved chunks
+  │
+  ▼
+Pydantic response  (models/schemas.py)  { answer, sources }
+```
 
 ## Quick start
 
