@@ -18,7 +18,7 @@ Built to the engineering standard that separates production AI systems from demo
 - Python 3.12, FastAPI, Pydantic
 - ChromaDB (vector store, persistent local)
 - Anthropic Claude (claude-sonnet-4-6)
-- pytest-compatible eval runner
+- pytest test suite + standalone eval runner (LLM-as-judge)
 
 ## Architecture
 ```
